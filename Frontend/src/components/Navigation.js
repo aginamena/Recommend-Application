@@ -42,7 +42,7 @@ function Navigation(props) {
                             <Link to="/users"><a href="#" className="nav-item nav-link" style={currentTab == "All Users" ? styling
                                 : {}} onClick={() => setCurrentTab("All Users")}>All Users</a></Link>
                             <Link to="/"><a href="#" className="nav-item nav-link" onClick={() => logout()}>Logout</a></Link>
-                            <Link to="/profile"><a href="#" className="nav-item nav-link" style={currentTab == "My Profile" ? styling
+                            <Link to={"/profile/" + localStorage.getItem("emailAddress")}><a href="#" className="nav-item nav-link" style={currentTab == "My Profile" ? styling
                                 : {}} onClick={() => setCurrentTab("My Profile")}>My Profile</a></Link>
                         </div>
                         <div>

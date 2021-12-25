@@ -42,9 +42,8 @@ function App() {
           <Route exact path="/register">
             <Register setLogin={condition => setIsLoggedIn(condition)} />
           </Route>
-          <Route exact path="/profile" component={Profile} />
+          <Route exact path="/profile/:emailAddress" component={Profile} />
           <Route exact path="/editBook/:bookId" component={EditBook} />
-          {/* //createdBookUserProfle */}
         </Switch>
       </div>
     </Router>

@@ -9,7 +9,7 @@ function Book({ author, category, title, createdBy, date }) {
             <td className="tableTextColor">{category}</td>
             <td className="tableTextColor">{title}</td>
             <td className="tableTextColor">
-                <Link to="/createdBookUserProfle">{createdBy}</Link>
+                <Link to={"/profile/" + createdBy}>{createdBy}</Link>
             </td>
             <td className="tableTextColor">{date}</td>
         </tr>

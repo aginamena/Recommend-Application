@@ -39,7 +39,7 @@ function EditBook() {
             // console.log(response);
             const data = await response.json();
             // redirect to the users profile page
-            history.push("/profile");
+            history.push("/profile/" + creatorEmail);
         }
         catch (error) {
             console.log(error);

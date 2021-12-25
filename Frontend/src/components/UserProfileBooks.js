@@ -15,7 +15,6 @@ function UserProfileBooks(props) {
             props.filter(props.id);
         }
         catch (e) {
-            console.log("2");
             console.log(e);
         }
         // const response = await fetch("http://localhost:9000/api/book/" + id, options);
@@ -29,12 +28,23 @@ function UserProfileBooks(props) {
         <tr className='BookCmp'>
             <td className="tableTextColor" id="userProfileBookAuthor">{props.author}</td>
             <td className="tableTextColor" id="userProfileBookCategory">{props.category}</td>
-            <td className="tableTextColor" id="userProfileBookTitle">{props.stitle}</td>
+            <td className="tableTextColor" id="userProfileBookTitle">{props.title}</td>
             <td className="tableTextColor">{props.date}</td>
-            <td>
+            {
+                props.isMyProfile && (
+                    <>
+                        {/* we can only edit / delete our profile */}
+                        <td>
+                            <Link to={"/editBook/" + props.id}><i className="fas fa-edit"></i></Link>
+                        </td>
+                        <td><i className="fas fa-trash-alt" onClick={() => deleteBook()}></i></td>
+                    </>
+                )
+            }
+            {/* <td>
                 <Link to={"/editBook/" + props.id}><i className="fas fa-edit"></i></Link>
             </td>
-            <td><i className="fas fa-trash-alt" onClick={() => deleteBook()}></i></td>
+            <td><i className="fas fa-trash-alt" onClick={() => deleteBook()}></i></td> */}
         </tr>
 
     )
