@@ -1,0 +1,1 @@
+Users of the site are able to recommend books to other users of site. The recommended books are fiction, non-fiction, poetry, folktale and drama. Any user can see all the recommended books of other users in the site.
