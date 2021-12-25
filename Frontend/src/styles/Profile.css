@@ -1,0 +1,12 @@
+#profile .tableTextColor {
+  color: lightgray;
+}
+#profile h4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: lightgray;
+}
+#profile tbody {
+  max-height: 343px;
+}

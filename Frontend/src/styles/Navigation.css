@@ -1,0 +1,33 @@
+#Navigation {
+  background-color: #003f50;
+}
+#navbarNavAltMarkup {
+  justify-content: space-between;
+}
+#navbarNavAltMarkup input {
+  height: 38px;
+  padding-left: 10px;
+}
+#navbarNavAltMarkup #searchBtn {
+  margin-left: 15px;
+  padding: 5px 15px;
+  border: 0;
+  background-color: #839496;
+  color: white;
+  border-radius: 10px;
+}
+.navbar-brand {
+  color: white;
+}
+.nav-link {
+  color: #839496;
+}
+
+.nav-link:hover,
+.navbar-brand:hover {
+  color: #cb4b16;
+}
+.navbar-nav > a {
+  text-decoration: none;
+  /* background-color: #cb4b16; */
+}

@@ -1,0 +1,11 @@
+#home {
+  color: white;
+  text-align: center;
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  height: 91%;
+  object-fit: cover;
+}
+#home > div {
+  padding-top: 30px;
+}

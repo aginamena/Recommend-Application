@@ -1,0 +1,51 @@
+#registerCmp {
+  color: #839496;
+  width: 500px;
+  /* display: none; */
+  background-color: #002b36;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
+  background-color: #003f50;
+}
+#registerHeading {
+  text-align: center;
+}
+
+#registerSubmitBtn {
+  background-color: #268bd2;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: 0;
+  margin-top: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+#userExistsAlready {
+  position: absolute;
+  left: 50%;
+  bottom: 50px;
+  transform: translateX(-50%);
+}
+#userExistsAlready > div {
+  color: red;
+  margin-bottom: 5px;
+}
+#userExistsAlready button {
+  background-color: #cb4b16;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: 0;
+  /* margin-top: 30px; */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}

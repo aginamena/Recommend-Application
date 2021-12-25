@@ -1,0 +1,23 @@
+{
+  "name": "Book_keeping_App",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node Backend/server.js",
+    "server": "nodemon Backend/server.js",
+    "client": "npm start --prefix Frontend",
+    "dev": "concurrently \"npm run server \" \"npm run client \""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.5.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "express-async-handler": "^1.2.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.1.2"
+  }
+}

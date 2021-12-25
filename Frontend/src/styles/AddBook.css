@@ -1,0 +1,39 @@
+#AddBook {
+  color: #839496;
+  width: 500px;
+  /* display: none; */
+  background-color: #002b36;
+  height: 500px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 20px;
+  border-radius: 10px;
+  transition: all 0.3s ease-in;
+  background-color: #003f50;
+  text-align: left;
+}
+#addBookHeading {
+  text-align: center;
+}
+#addBookForm {
+  margin-top: 30px;
+  position: relative;
+}
+#addBookForm > button {
+  background-color: #cb4b16;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 20px;
+  border: 0;
+  margin-top: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  /* bottom: -65px; */
+}
+#addBookForm #Category,
+#Category > option {
+  cursor: pointer;
+}

@@ -1,0 +1,20 @@
+.BookCmp {
+  cursor: pointer;
+}
+.BookCmp:hover {
+  background-color: #007bff;
+}
+
+.tableTextColor {
+  color: lightgray;
+}
+.BookCmp a {
+  color: #cb4b16;
+  text-decoration: underline;
+}
+.fa-trash-alt {
+  color: red;
+}
+.fa-edit {
+  color: yellow;
+}

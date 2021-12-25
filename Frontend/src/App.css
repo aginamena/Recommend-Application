@@ -1,0 +1,21 @@
+.App {
+  /* text-align: center; */
+  background-color: #002b36;
+  height: 100vh;
+  /* padding-top: 20px; */
+  font-family: "Josefin Sans", "sans-serif";
+  position: relative;
+}
+.App #heading {
+  color: #839496;
+}
+#addBookBtn {
+  margin-top: 10px;
+  background-color: #b58900;
+  color: white;
+  border-radius: 10px;
+  padding: 10px;
+}
+#addBookBtn:hover {
+  background-color: #9a7400;
+}
