@@ -39,14 +39,14 @@ function Navigation(props) {
                                 : {}} onClick={() => setCurrentTab("All Books")}>All Books</a></Link>
                             <Link to="/addBook"><a href="#" className="nav-item nav-link" style={currentTab == "Add Book" ? styling
                                 : {}} onClick={() => setCurrentTab("Add Book")}>Add Book</a></Link>
-                            <Link to="/users"><a href="#" className="nav-item nav-link" style={currentTab == "All Users" ? styling
+                            <Link to="/allUsers"><a href="#" className="nav-item nav-link" style={currentTab == "All Users" ? styling
                                 : {}} onClick={() => setCurrentTab("All Users")}>All Users</a></Link>
                             <Link to="/"><a href="#" className="nav-item nav-link" onClick={() => logout()}>Logout</a></Link>
                             <Link to={"/profile/" + localStorage.getItem("emailAddress")}><a href="#" className="nav-item nav-link" style={currentTab == "My Profile" ? styling
                                 : {}} onClick={() => setCurrentTab("My Profile")}>My Profile</a></Link>
                         </div>
                         <div>
-                            <input placeholder="Name of book..." />
+                            <input placeholder="Name of category..." />
                             <button id="searchBtn">Search</button>
                         </div>
                     </div>

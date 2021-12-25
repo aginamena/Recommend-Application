@@ -18,3 +18,12 @@
 #profile tbody {
   max-height: 343px;
 }
+#profileTableDiv {
+  /* height should be calculated by the browser by the maximum height should be 400px */
+  height: auto;
+  max-height: 400px;
+  overflow: auto;
+}
+#emptyIllustration {
+  margin-top: 30px;
+}

@@ -38,8 +38,9 @@ usersRoute.delete("/:id", (req, res) => {
     res.send("deleted user");
 })
 
-usersRoute.get("/", (req, res) => {
-    res.send("fetching users")
+usersRoute.get("/", async (req, res) => {
+    const allUsers = await User.find();
+    res.send(allUsers);
 })
 
 module.exports = usersRoute;

@@ -14,31 +14,34 @@ function Books() {
     }, [])
     return (
         <div id="Books" className='container'>
-            <table className='table table-bordered'>
-                <thead>
-                    <tr>
-                        <th scope="col">Author</th>
-                        <th scope="col">Category</th>
-                        <th scope="col">Title</th>
-                        <th scope="col">Created By</th>
-                        <th scope="col">Date</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {
-                        books.map((book, index) => (
-                            <Book
-                                author={book.author}
-                                category={book.category}
-                                title={book.title}
-                                date={book.date}
-                                createdBy={book.createdBy}
-                                key={index}
-                            />
-                        ))
-                    }
-                </tbody>
-            </table>
+            <h5>Total recommended books is {books.length}</h5>
+            <div>
+                <table className='table table-bordered'>
+                    <thead>
+                        <tr>
+                            <th scope="col">Author</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Title</th>
+                            <th scope="col">Created By</th>
+                            <th scope="col">Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {
+                            books.map((book, index) => (
+                                <Book
+                                    author={book.author}
+                                    category={book.category}
+                                    title={book.title}
+                                    date={book.date}
+                                    createdBy={book.createdBy}
+                                    key={index}
+                                />
+                            ))
+                        }
+                    </tbody>
+                </table>
+            </div>
         </div>
     )
 }

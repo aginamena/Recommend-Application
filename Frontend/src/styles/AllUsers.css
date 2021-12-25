@@ -1,0 +1,17 @@
+#allUsers {
+  margin-top: 30px;
+}
+#allUsers a {
+  color: #cb4b16;
+  text-decoration: underline;
+}
+.userInfo,
+#allUsers h5 {
+  color: lightgray;
+}
+#allUsers > div {
+  /* the height should be calculated by the browser but the maximum height should be 500xp */
+  height: auto;
+  max-height: 500px;
+  overflow: auto;
+}

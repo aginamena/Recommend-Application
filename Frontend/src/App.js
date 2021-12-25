@@ -15,6 +15,7 @@ import Home from './components/Home';
 import Login from './components/Login';
 import Profile from './components/Profile';
 import EditBook from './components/EditBook';
+import AllUsers from './components/AllUsers';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -44,6 +45,7 @@ function App() {
           </Route>
           <Route exact path="/profile/:emailAddress" component={Profile} />
           <Route exact path="/editBook/:bookId" component={EditBook} />
+          <Route exact path="/allUsers" component={AllUsers} />
         </Switch>
       </div>
     </Router>

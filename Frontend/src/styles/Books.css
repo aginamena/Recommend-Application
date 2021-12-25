@@ -1,6 +1,13 @@
 #Books {
   margin-top: 30px;
+  color: lightgray;
 }
 thead th {
   color: #839496;
+}
+#Books > div {
+  /* height should be calculated by the browser by the maximum height should be 500px */
+  height: auto;
+  max-height: 500px;
+  overflow: auto;
 }
