@@ -7,7 +7,6 @@ function AllUsers() {
         fetch("http://localhost:9000/api/users")
             .then(response => response.json())
             .then(books => setAllUsers(books))
-            .catch(error => console.log(error));
     }, [])
     return (
         <div id="allUsers" className='container'>
@@ -28,7 +27,6 @@ function AllUsers() {
                                     <td td className='userInfo'>
                                         <Link to={"/profile/" + users.email}>{users.email}</Link>
                                     </td>
-                                    {/* <Link to={"/profile/" + users.email}><td className='userInfo'>{users.email}</td></Link> */}
                                 </tr>
                             ))
                         }

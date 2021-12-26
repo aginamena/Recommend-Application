@@ -8,7 +8,6 @@ function Register(props) {
         const name = document.querySelector("#name").value;
         const password = document.querySelector("#password").value;
         const emailAddress = document.querySelector("#email").value;
-        // console.log(JSON.stringify({ email: emailAddress, password: password }));
         const options = {
             method: "POST",
             headers: {
@@ -16,24 +15,18 @@ function Register(props) {
             },
             body: JSON.stringify({ email: emailAddress, password: password, name: name })
         }
-        try {
-            const response = await fetch("http://localhost:9000/api/users/register", options);
-            // console.log(response);
-            const data = await response.json();
-            if (data === "User already exist") {
-                setUserExists(true);
+        const response = await fetch("http://localhost:9000/api/users/register", options);
+        const data = await response.json();
+        if (data === "User already exist") {
+            setUserExists(true);
 
-            } else {
-                setUserExists(false);
-                props.setLogin(true);
-                localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("emailAddress", emailAddress);
-                //we want to go to the home page
-                window.location.href = "/"
-            }
-        }
-        catch (error) {
-            console.log(error);
+        } else {
+            setUserExists(false);
+            props.setLogin(true);
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("emailAddress", emailAddress);
+            //we want to go to the home page
+            window.location.href = "/"
         }
     }
     return (

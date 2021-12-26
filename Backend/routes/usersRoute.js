@@ -27,17 +27,6 @@ usersRoute.post("/login", async (req, res) => {
     }
 })
 
-// update user
-usersRoute.put("/update", (req, res) => {
-    res.send("update route");
-})
-
-// delete user
-usersRoute.delete("/:id", (req, res) => {
-    // we have a dynamic id
-    res.send("deleted user");
-})
-
 usersRoute.get("/", async (req, res) => {
     const allUsers = await User.find();
     res.send(allUsers);

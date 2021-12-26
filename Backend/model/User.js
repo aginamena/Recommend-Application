@@ -9,8 +9,6 @@ const UserSchema = new mongoose.Schema({
     email: {
         type: String,
         required: true
-        // we also don't want to have duplicate emails, so we do index : true
-        // index: true
     },
     password: {
         type: String,
@@ -18,13 +16,6 @@ const UserSchema = new mongoose.Schema({
     }
 })
 
-//we want to also identify each book by the person that created it
-// UserSchema.virtual("books", {
-//     ref: "Book",
-//     foreignField: "createdBy",
-//     localField: "_id"
-// })
-// UserSchema.set("toJSON", { virtuals: true })
 
 //creating the model using the schema blueprint
 //model is a way of structuring our data. It's the mediator between the

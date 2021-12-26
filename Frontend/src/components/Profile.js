@@ -8,12 +8,10 @@ function Profile() {
     const [books, setBooks] = useState([]);
     // we want to dispay another users profile too
     const userEmail = emailAddress ? emailAddress : localStorage.getItem("emailAddress");
-    const isMyProfile = !userEmail || userEmail.substring(0, userEmail.indexOf('@')) === localStorage.getItem("emailAddress")
-        .substring(0, userEmail.indexOf('@'));
+    const isMyProfile = !userEmail || (userEmail === localStorage.getItem("emailAddress"));
     if (!isMyProfile) {
         var otherUserName = userEmail.substring(0, userEmail.indexOf('@'));
     }
-
     useEffect(() => {
         fetch("http://localhost:9000/api/book/" + userEmail)
             .then(response => response.json())
@@ -27,8 +25,8 @@ function Profile() {
     return (
         <div className='container' id="profile">
             <h4>
-                {/* dynamic user profile. if the profile is mine, display "My" otherwise the name of the
-                other user */}
+                {/* dynamic user profile. we want to be albe to display my profile and the other users
+                profile*/}
                 {isMyProfile ? "My recommended books" :
                     otherUserName + "'s recommended books"}
             </h4>
@@ -55,6 +53,7 @@ function Profile() {
                                     <th scope="col">Created Date</th>
                                     {
                                         // we can only edit / delete our profile
+                                        // and not the other users profile
                                         isMyProfile && (
                                             <>
                                                 <th scope="col">Edit</th>

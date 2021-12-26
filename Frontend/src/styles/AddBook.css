@@ -31,7 +31,6 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  /* bottom: -65px; */
 }
 #addBookForm #Category,
 #Category > option {

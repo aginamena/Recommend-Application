@@ -13,20 +13,13 @@ function EditBook() {
             .then(books => setBook(books))
             .catch(error => console.log(error));
     }, [])
-
-    // useEffect(() => {
-    //     //fetch book corresponding to the id
-    // }, [])
     async function handleSubmit(event) {
         event.preventDefault();
         const category = document.querySelector("#Category").value;
         const author = document.querySelector("#Author").value;
         const title = document.querySelector("#Title").value;
-        //get the users login email address to create a book
         const creatorEmail = localStorage.getItem("emailAddress");
         const dateCreated = new Date().toLocaleDateString("en-US");
-        // const creatorEmail = document.querySelector("#creatorEmail").value;
-        // console.log(JSON.stringify({ email: emailAddress, password: password }));
         const options = {
             method: "PUT",
             headers: {
@@ -34,16 +27,8 @@ function EditBook() {
             },
             body: JSON.stringify({ date: dateCreated, title: title, createdBy: creatorEmail, author: author, category: category })
         }
-        try {
-            const response = await fetch("http://localhost:9000/api/book/" + bookId, options);
-            // console.log(response);
-            const data = await response.json();
-            // redirect to the users profile page
-            history.push("/profile/" + creatorEmail);
-        }
-        catch (error) {
-            console.log(error);
-        }
+        await fetch("http://localhost:9000/api/book/" + bookId, options);
+        history.push("/profile/" + creatorEmail);
     }
     return (
         <div id="AddBook">

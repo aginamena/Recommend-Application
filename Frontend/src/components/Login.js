@@ -9,7 +9,6 @@ function Login(props) {
         event.preventDefault();
         const password = document.querySelector("#password").value;
         const emailAddress = document.querySelector("#email").value;
-        // console.log(JSON.stringify({ email: emailAddress, password: password }));
         const options = {
             method: "POST",
             headers: {
@@ -17,25 +16,18 @@ function Login(props) {
             },
             body: JSON.stringify({ email: emailAddress, password: password })
         }
-        try {
-            const response = await fetch("http://localhost:9000/api/users/login", options);
-            // console.log(response);
-            const data = await response.json();
-            if (data === "User Exist") {
-                //go to home page
-                setErrorMessage(false);
-                localStorage.setItem("isLoggedIn", "true");
-                localStorage.setItem("emailAddress", emailAddress);
-                props.setLogin(true);
-                // history.push("/")
+        const response = await fetch("http://localhost:9000/api/users/login", options);
+        const data = await response.json();
+        if (data === "User Exist") {
+            //go to home page
+            setErrorMessage(false);
+            localStorage.setItem("isLoggedIn", "true");
+            localStorage.setItem("emailAddress", emailAddress);
+            props.setLogin(true);
+        } else {
+            setErrorMessage(true);
+        }
 
-            } else {
-                setErrorMessage(true);
-            }
-        }
-        catch (error) {
-            console.log(error);
-        }
     }
     return (
         <>

@@ -8,13 +8,12 @@ const bookSchema = new mongoose.Schema({
     },
     category: {
         type: String,
-        required: [true, "book category is required"]
+        required: true
     },
     createdBy: {
         // we are trying to reference the user who added to book to the book store
         type: String,
         required: true
-        // required: true
     },
     date: {
         type: String,
@@ -23,8 +22,6 @@ const bookSchema = new mongoose.Schema({
     title: {
         type: String,
         required: true
-        // we also don't want to have duplicate emails, so we do index : true
-        // index: true
     }
 }, { timestamps: true })
 

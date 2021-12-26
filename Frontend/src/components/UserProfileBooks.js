@@ -10,18 +10,9 @@ function UserProfileBooks(props) {
                 "content-type": "application/json"
             },
         }
-        try {
-            const response = await fetch("http://localhost:9000/api/book/" + props.id, options);
-            props.filter(props.id);
-        }
-        catch (e) {
-            console.log(e);
-        }
-        // const response = await fetch("http://localhost:9000/api/book/" + id, options);
-        // const data = await response.json();
-        // //go back to the profile page
-        // history.push("/profile");
-
+        // we delete from the backend and filter from the frontend
+        const response = await fetch("http://localhost:9000/api/book/" + props.id, options);
+        props.filter(props.id);
     }
     return (
 
@@ -41,10 +32,6 @@ function UserProfileBooks(props) {
                     </>
                 )
             }
-            {/* <td>
-                <Link to={"/editBook/" + props.id}><i className="fas fa-edit"></i></Link>
-            </td>
-            <td><i className="fas fa-trash-alt" onClick={() => deleteBook()}></i></td> */}
         </tr>
 
     )

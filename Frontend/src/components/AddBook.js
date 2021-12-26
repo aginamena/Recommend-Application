@@ -12,8 +12,6 @@ function AddBook() {
         //get the users login email address to create a book
         const creatorEmail = localStorage.getItem("emailAddress");
         const dateCreated = new Date().toLocaleDateString("en-US");
-        // const creatorEmail = document.querySelector("#creatorEmail").value;
-        // console.log(JSON.stringify({ email: emailAddress, password: password }));
         const options = {
             method: "POST",
             headers: {
@@ -21,16 +19,8 @@ function AddBook() {
             },
             body: JSON.stringify({ date: dateCreated, title: title, createdBy: creatorEmail, author: author, category: category })
         }
-        try {
-            const response = await fetch("http://localhost:9000/api/book", options);
-            // console.log(response);
-            const data = await response.json();
-            // redirect to the users profile page
-            history.push("/profile/" + creatorEmail);
-        }
-        catch (error) {
-            console.log(error);
-        }
+        await fetch("http://localhost:9000/api/book", options);
+        history.push("/profile/" + creatorEmail);
     }
     return (
         <div id="AddBook">
@@ -57,10 +47,6 @@ function AddBook() {
                         <label for="Title">Title</label>
                         <input type="text" name="title" className="form-control" id="Title" placeholder="Name of Book" required />
                     </div>
-                    {/* <div className="form-group">
-                        <label for="creatorEmail">Your Email</label>
-                        <input type="email" name="creatorEmail" className="form-control" id="creatorEmail" placeholder="MenaAgina@gmail.com" required />
-                    </div> */}
                     <button type="submit">Create Book</button>
                 </form>
             </div>

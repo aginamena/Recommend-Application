@@ -9,16 +9,9 @@ bookRoute.post("/", async (req, res) => {
     // console.log(req.body);
     const book = await Book.create(req.body);
     if (book) {
-        // res.status(200);
-        //sending all the books to the frontend
-        // const allbooks = await Book.find();
-        //the frontend should be able to handle a case when there's no book
-        // res.send(allbooks);
         res.json("book added")
     } else {
         res.json("book can't be added")
-        // res.status(500);
-        // res.send("Error creating the book");
     }
 
 });

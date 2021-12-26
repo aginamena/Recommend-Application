@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import "../styles/Navigation.css";
 import { Link, useHistory } from "react-router-dom";
 
@@ -28,7 +28,7 @@ function Navigation(props) {
         <nav className="navbar navbar-expand-md" id="Navigation">
             <a className="navbar-brand" href="#">Recommend</a>
             {props.isLoggedIn &&
-                // only when the user logis in that we want to display the rest of the navigation
+                // only when the user logs in that we want to display the rest of the navigation
                 <>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

@@ -10,7 +10,7 @@ const bookRoute = require("./routes/bookRoute");
 // we want to convert any incoming request from the client to 
 // json format
 app.use(express.json());
-app.use(express.urlencoded());// parse data from 
+app.use(express.urlencoded());
 app.use(cors());
 
 //importing the database function and running it

@@ -5,8 +5,7 @@ import Navigation from './components/Navigation';
 import {
   BrowserRouter as Router,
   Switch,
-  Route,
-  useHistory
+  Route
 } from "react-router-dom";
 import Books from './components/Books';
 import AddBook from './components/AddBook';
@@ -46,7 +45,6 @@ function App() {
           <Route exact path="/books">
             <Books sortByCategory={sortByCategory} />
           </Route>
-          {/* <Route exact path="/books" component={Books} /> */}
           <Route exact path="/addbook" component={AddBook} />
           <Route exact path="/register">
             <Register setLogin={condition => setIsLoggedIn(condition)} />
