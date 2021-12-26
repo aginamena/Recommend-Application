@@ -50,12 +50,20 @@ bookRoute.get("/edit/:bookId", async (req, res) => {
     res.send(book);
 })
 
+//get all books by category
+bookRoute.get("/searchBy/:category", async (req, res) => {
+    const { category } = req.params;
+    const allCategorizedBooks = await Book.find({ category: category })
+    res.send(allCategorizedBooks);
+})
+
 //get all the books the corresponding to the users email
 bookRoute.get("/:emailAddress", async (req, res) => {
     const { emailAddress } = req.params;
     const userCreatedBooks = await Book.find({ createdBy: emailAddress })
     res.send(userCreatedBooks);
 })
+
 //get all the books in the database
 bookRoute.get("/", async (req, res) => {
     const allbooks = await Book.find();

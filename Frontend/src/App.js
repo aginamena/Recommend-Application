@@ -19,6 +19,7 @@ import AllUsers from './components/AllUsers';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [sortByCategory, setSortByCategory] = useState({})
   useEffect(() => {
     if (localStorage.getItem("isLoggedIn") === "true") {
       setIsLoggedIn(true);
@@ -29,7 +30,11 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Navigation isLoggedIn={isLoggedIn} setLogin={condition => setIsLoggedIn(condition)} />
+        <Navigation
+          isLoggedIn={isLoggedIn}
+          setLogin={condition => setIsLoggedIn(condition)}
+          searchByCategory={newData => setSortByCategory(newData)}
+        />
         <Switch>
           {
             isLoggedIn ?
@@ -38,7 +43,10 @@ function App() {
                 <Login setLogin={condition => setIsLoggedIn(condition)} />
               </Route>
           }
-          <Route exact path="/books" component={Books} />
+          <Route exact path="/books">
+            <Books sortByCategory={sortByCategory} />
+          </Route>
+          {/* <Route exact path="/books" component={Books} /> */}
           <Route exact path="/addbook" component={AddBook} />
           <Route exact path="/register">
             <Register setLogin={condition => setIsLoggedIn(condition)} />

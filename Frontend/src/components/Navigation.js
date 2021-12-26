@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import "../styles/Navigation.css";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 
 function Navigation(props) {
+    const history = useHistory();
     const [currentTab, setCurrentTab] = useState("Home");
     function logout() {
         //the user is no longer loggedin. 
@@ -15,12 +16,13 @@ function Navigation(props) {
         color: "white ",
         borderRadius: "10px"
     }
-    // useEffect(
-    //     () => {
-    //         setCurrentTab("Home");
-    //     },
-    //     []
-    // )
+    function allBookPage() {
+        setCurrentTab("All books");
+        props.searchByCategory({
+            shouldSort: false,
+            sortBy: ""
+        });
+    }
 
     return (
         <nav className="navbar navbar-expand-md" id="Navigation">
@@ -36,7 +38,7 @@ function Navigation(props) {
                             <Link to="/"><a href="#" className="nav-item nav-link" style={currentTab == "Home" ? styling
                                 : {}} onClick={() => setCurrentTab("Home")}>Home</a></Link>
                             <Link to="/books"><a href="#" className="nav-item nav-link" style={currentTab == "All Books" ? styling
-                                : {}} onClick={() => setCurrentTab("All Books")}>All Books</a></Link>
+                                : {}} onClick={() => allBookPage()}>All Books</a></Link>
                             <Link to="/addBook"><a href="#" className="nav-item nav-link" style={currentTab == "Add Book" ? styling
                                 : {}} onClick={() => setCurrentTab("Add Book")}>Add Book</a></Link>
                             <Link to="/allUsers"><a href="#" className="nav-item nav-link" style={currentTab == "All Users" ? styling
@@ -46,8 +48,13 @@ function Navigation(props) {
                                 : {}} onClick={() => setCurrentTab("My Profile")}>My Profile</a></Link>
                         </div>
                         <div>
-                            <input placeholder="Name of category..." />
-                            <button id="searchBtn">Search</button>
+                            <input placeholder="Name of category..." id="navigationInput" />
+                            <Link to="/books"><button id="searchBtn"
+                                onClick={() => props.searchByCategory({
+                                    shouldSort: true,
+                                    sortBy: document.querySelector("#navigationInput").value
+                                })}
+                            >Search</button></Link>
                         </div>
                     </div>
                 </>

@@ -4,14 +4,33 @@ import Book from "./Book";
 import "../styles/Books.css";
 
 
-function Books() {
+function Books(props) {
+    const { shouldSort, sortBy } = props.sortByCategory;
     const [books, setBooks] = useState([]);
+    console.log(shouldSort);
+    console.log(sortBy);
     useEffect(() => {
-        fetch("http://localhost:9000/api/book")
-            .then(response => response.json())
-            .then(books => setBooks(books))
-            .catch(error => console.log(error));
-    }, [])
+        if (shouldSort) {
+            //sorting by what the user entered in search box
+            console.log("1");
+            fetch("http://localhost:9000/api/book/searchBy/" + sortBy)
+                .then(response => response.json())
+                .then(books => setBooks(books))
+                .catch(error => console.log(error));
+
+        } else {
+            console.log("2");
+
+            fetch("http://localhost:9000/api/book")
+                .then(response => response.json())
+                .then(books => setBooks(books))
+                .catch(error => console.log(error));
+        }
+        // fetch("http://localhost:9000/api/book")
+        //     .then(response => response.json())
+        //     .then(books => setBooks(books))
+        //     .catch(error => console.log(error));
+    }, [sortBy])
     return (
         <div id="Books" className='container'>
             <h5>Total recommended books is {books.length}</h5>

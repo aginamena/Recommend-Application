@@ -22,8 +22,8 @@ function AllUsers() {
                     </thead>
                     <tbody>
                         {
-                            allUsers.map(users => (
-                                <tr>
+                            allUsers.map((users, index) => (
+                                <tr key={index}>
                                     <td className='userInfo'>{users.name}</td>
                                     <td td className='userInfo'>
                                         <Link to={"/profile/" + users.email}>{users.email}</Link>
