@@ -15,6 +15,7 @@ import Login from './components/Login';
 import Profile from './components/Profile';
 import EditBook from './components/EditBook';
 import AllUsers from './components/AllUsers';
+import Navigation2 from './components/Navigation2';
 
 function App() {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -34,6 +35,7 @@ function App() {
           setLogin={condition => setIsLoggedIn(condition)}
           searchByCategory={newData => setSortByCategory(newData)}
         />
+        {/* <Navigation2 /> */}
         <Switch>
           {
             isLoggedIn ?

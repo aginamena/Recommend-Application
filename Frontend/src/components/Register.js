@@ -33,7 +33,7 @@ function Register(props) {
         <>
             <div id="registerCmp">
                 <h1 id="registerHeading">Register</h1>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} autoComplete='off'>
                     <div className="form-group">
                         <label for="name">Name</label>
                         <input type="text" className="form-control" id="name" name="name" placeholder="Mena Agina" required />

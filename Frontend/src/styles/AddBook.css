@@ -44,3 +44,10 @@
     bottom: 130px;
   }
 }
+
+@media (max-width: 540px) {
+  #AddBook {
+    width: 90%;
+    bottom: 50px;
+  }
+}

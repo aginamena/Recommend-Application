@@ -33,7 +33,7 @@ function Login(props) {
         <>
             <div id="login">
                 <h1>Login</h1>
-                <form onSubmit={handleSubmit}>
+                <form onSubmit={handleSubmit} autoComplete='off'>
                     <div className="form-group">
                         <label for="password">Email</label>
                         <input type="email" className="form-control" id="email" name="email" placeholder="MenaAgina@gmail.com" required />
