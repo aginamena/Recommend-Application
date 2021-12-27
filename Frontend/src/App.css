@@ -17,3 +17,9 @@
 #addBookBtn:hover {
   background-color: #9a7400;
 }
+
+@media (max-width: 540px) {
+  .App {
+    height: 950px;
+  }
+}

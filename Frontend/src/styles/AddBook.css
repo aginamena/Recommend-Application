@@ -36,3 +36,11 @@
 #Category > option {
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  #AddBook {
+    transform: translateX(-50%);
+    top: unset;
+    bottom: 130px;
+  }
+}

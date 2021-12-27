@@ -10,7 +10,9 @@ function Home() {
             .then(books => setRecommendBookCount(books.length))
     }, [])
     return (
-        <div id="home" style={{ backgroundImage: "url(https://images.prismic.io/tpl-featured-content/add7e1b7-42f7-4a56-b337-0d7a4f50f0e1_TPL+Reading+Challenge_blogs+section+no+text.jpg?auto=compress,format&rect=0,0,630,320&w=800&h=406)" }}>
+        <div id="home"
+            style={{ backgroundImage: "linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(https://us.123rf.com/450wm/perhapzzz/perhapzzz1603/perhapzzz160300384/53680862-open-book-hardback-books-on-wooden-table-back-to-school-copy-space-for-text-.jpg?ver=6)" }}
+        >
             <div>
                 <h3>My recommended books count </h3>
                 <h4>{RecommendBookCount}</h4>

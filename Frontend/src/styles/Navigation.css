@@ -30,3 +30,13 @@
 .navbar-nav > a {
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .navbar-nav {
+    display: inline-flex;
+    text-align: center;
+  }
+  .navbar-nav + div {
+    margin-bottom: 10px;
+  }
+}
