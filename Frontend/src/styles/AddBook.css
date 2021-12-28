@@ -41,13 +41,14 @@
   #AddBook {
     transform: translateX(-50%);
     top: unset;
-    bottom: 130px;
+    margin-top: 90px;
+    /* bottom: 130px; */
   }
 }
 
 @media (max-width: 540px) {
   #AddBook {
     width: 90%;
-    bottom: 50px;
+    /* bottom: 50px; */
   }
 }

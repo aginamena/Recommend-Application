@@ -50,8 +50,19 @@
   transform: translateX(-50%);
 }
 
+@media (max-width: 768px) {
+  #userExistsAlready {
+    bottom: 170px;
+    text-align: center;
+  }
+}
 @media (max-width: 540px) {
   #registerCmp {
     width: 90%;
+    transform: translateX(-50%);
+    top: 90px;
+  }
+  #userExistsAlready {
+    bottom: 230px;
   }
 }
