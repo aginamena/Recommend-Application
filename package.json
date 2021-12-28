@@ -1,8 +1,11 @@
 {
-  "name": "Book_keeping_App",
+  "name": "Recommend-App",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "14.17.0"
+  },
   "scripts": {
     "start": "node Backend/server.js",
     "server": "nodemon Backend/server.js",

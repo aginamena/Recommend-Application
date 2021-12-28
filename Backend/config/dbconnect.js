@@ -4,8 +4,9 @@ const mongoose = require("mongoose");
 // we use mongo db compase to test uring mongoDb compass
 // we also have to change the name of the database from test to <any name we want >
 // const url = "mongodb+srv://menaagina:BE5ej9mrXWW71PhE@cluster0.ahqbc.mongodb.net/booking-keeping";
+// this is a remote connection with mongo dB atlis and not from our localhost
 
-const url = "mongodb+srv://menaagina:BE5ej9mrXWW71PhE@cluster0.ahqbc.mongodb.net/booking-keeping";
+const url = "mongodb+srv://menaagina:BE5ej9mrXWW71PhE@cluster0.ahqbc.mongodb.net/Recommend-App";
 const dbConnect = () => {
     mongoose.connect(url, {
         useUnifiedTopology: true,
