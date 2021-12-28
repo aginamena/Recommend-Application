@@ -19,7 +19,9 @@ function AddBook() {
             },
             body: JSON.stringify({ date: dateCreated, title: title, createdBy: creatorEmail, author: author, category: category })
         }
-        await fetch("http://localhost:9000/api/book", options);
+        const url = process.env.NODE_ENV === "production" ? "https://cryptic-shore-91810.herokuapp.com/api/book" : "http://localhost:9000/api/book";
+        console.log(url);
+        await fetch(url, options);
         history.push("/profile/" + creatorEmail);
     }
     return (

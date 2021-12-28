@@ -8,9 +8,10 @@
   },
   "scripts": {
     "heroku-postbuild": "cd Frontend && npm install &&  npm run build",
-    "server": "nodemon Backend/server.js",
+    "start": "node Backend/server.js",
+    "server": "nodemon node Backend/server.js",
     "client": "npm start --prefix Frontend",
-    "start": "concurrently \"npm run server \" \"npm run client \""
+    "dev": "concurrently \"npm run server \" \"npm run client \""
   },
   "keywords": [],
   "author": "",
