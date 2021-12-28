@@ -7,10 +7,9 @@
     "node": "14.17.0"
   },
   "scripts": {
-    "start":"npm start --prefix Frontend",
     "server": "nodemon Backend/server.js",
     "client": "npm start --prefix Frontend",
-    "dev": "concurrently \"npm run server \" \"npm run client \""
+    "start": "concurrently \"npm run server \" \"npm run client \""
   },
   "keywords": [],
   "author": "",
