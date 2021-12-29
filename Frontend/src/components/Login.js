@@ -16,7 +16,9 @@ function Login(props) {
             },
             body: JSON.stringify({ email: emailAddress, password: password })
         }
-        const response = await fetch("http://localhost:9000/api/users/login", options);
+        // "http://localhost:9000/api/users/login"
+        const url = "https://cryptic-shore-91810.herokuapp.com/login"
+        const response = await fetch(url, options);
         const data = await response.json();
         if (data === "User Exist") {
             //go to home page

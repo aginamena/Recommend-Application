@@ -19,9 +19,6 @@ require("./config/dbconnect")();
 
 //defining routes
 // register user
-app.use("/", (req, res) => {
-    res.send("it is working");
-})
 app.use("/api/users", usersRoute);
 app.use("/api/book", bookRoute);
 if (process.env.NODE_ENV === 'production') {
