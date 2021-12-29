@@ -1,1 +1,2 @@
-Users of the site are able to recommend books to other users of site. The recommended books are fiction, non-fiction, poetry, folktale and drama. Any user can see all the recommended books of other users in the site.
+Users of the site are able to recommend books to other users of site. The recommended books are fiction, non-fiction, poetry, folktale and drama. Any user can see all the recommended books of other users in the site. When logged in, a user can see all the users using the site and what books they have recommended.
+Users can sort books in the site by category and can only edit or delete their recommended books and not books recommended by other users
