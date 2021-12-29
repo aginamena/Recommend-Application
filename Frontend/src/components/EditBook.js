@@ -36,7 +36,7 @@ function EditBook() {
                 <h5>Edit Book</h5>
             </div>
             <div>
-                <form id="addBookForm" onSubmit={handleSubmit} autoComplete='off'>
+                <form id="addBookForm" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label for="Category">Category</label>
                         <select className="form-control" id="Category" name="category" placeholder={book.category} required>
@@ -49,11 +49,11 @@ function EditBook() {
                     </div>
                     <div className="form-group">
                         <label for="Author">Author</label>
-                        <input type="text" placeholder={book.author} className="form-control" id="Author" name="author" required />
+                        <input type="text" autoComplete='no' placeholder={book.author} className="form-control" id="Author" name="author" required />
                     </div>
                     <div className="form-group">
                         <label for="Title">Title</label>
-                        <input type="text" placeholder={book.title} name="title" className="form-control" id="Title" required />
+                        <input type="text" autoComplete='no' placeholder={book.title} name="title" className="form-control" id="Title" required />
                     </div>
                     <button type="submit">Edit Book</button>
                 </form>

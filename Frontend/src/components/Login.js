@@ -36,10 +36,10 @@ function Login(props) {
         <>
             <div id="login">
                 <h1>Login</h1>
-                <form onSubmit={handleSubmit} autoComplete='off'>
+                <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label for="password">Email</label>
-                        <input type="email" className="form-control" id="email" name="email" placeholder="MenaAgina@gmail.com" required />
+                        <input type="email" autoComplete='no' className="form-control" id="email" name="email" placeholder="MenaAgina@gmail.com" required />
                     </div>
                     <div className="form-group">
                         <label for="password">Password</label>

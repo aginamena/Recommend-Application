@@ -34,14 +34,14 @@ function Register(props) {
         <>
             <div id="registerCmp">
                 <h1 id="registerHeading">Register</h1>
-                <form onSubmit={handleSubmit} autoComplete='off'>
+                <form onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label for="name">Name</label>
-                        <input type="text" className="form-control" id="name" name="name" placeholder="Mena Agina" required />
+                        <input type="text" autoComplete='no' className="form-control" id="name" name="name" placeholder="Mena Agina" required />
                     </div>
                     <div className="form-group">
                         <label for="email">Email address</label>
-                        <input type="email" className="form-control" id="email" name="email" placeholder="Mena@gmail.com" required />
+                        <input type="email" autoComplete='no' className="form-control" id="email" name="email" placeholder="Mena@gmail.com" required />
                     </div>
                     <div className="form-group">
                         <label for="password">Password</label>

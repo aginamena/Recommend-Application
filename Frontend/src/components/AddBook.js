@@ -29,7 +29,7 @@ function AddBook() {
                 <h5>Create Book</h5>
             </div>
             <div>
-                <form id="addBookForm" onSubmit={handleSubmit} autoComplete='off'>
+                <form id="addBookForm" onSubmit={handleSubmit}>
                     <div className="form-group">
                         <label for="Category">Category</label>
                         <select className="form-control" id="Category" name="category" required>
@@ -42,11 +42,11 @@ function AddBook() {
                     </div>
                     <div className="form-group">
                         <label for="Author">Author</label>
-                        <input type="text" className="form-control" id="Author" name="author" placeholder="Author's name" required />
+                        <input type="text" autoComplete='no' className="form-control" id="Author" name="author" placeholder="Author's name" required />
                     </div>
                     <div className="form-group">
                         <label for="Title">Title</label>
-                        <input type="text" name="title" className="form-control" id="Title" placeholder="Name of Book" required />
+                        <input type="text" autoComplete='no' name="title" className="form-control" id="Title" placeholder="Name of Book" required />
                     </div>
                     <button type="submit">Create Book</button>
                 </form>
