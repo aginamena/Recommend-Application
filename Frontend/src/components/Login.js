@@ -18,6 +18,7 @@ function Login(props) {
         }
         // "http://localhost:9000/api/users/login"
         const url = "https://cryptic-shore-91810.herokuapp.com/api/users/login"
+        console.log(url);
         const response = await fetch(url, options);
         const data = await response.json();
         if (data === "User Exist") {
@@ -44,14 +45,17 @@ function Login(props) {
                         <label for="password">Password</label>
                         <input type="password" className="form-control" id="password" name="password" placeholder=". . . . ." required />
                     </div>
-                    <button type="submit" id="loginBtn">Login</button>
+                    <div id="loginBtnAndRegBtn">
+                        <button type="submit" id="loginBtn">Login</button>
+                        <span >OR</span>
+                        <Link to="/register"><button id="loginRegisterBtn">Register</button></Link>
+                    </div>
                 </form>
             </div>
             {
                 errorMessage && (
                     <div id="loginErrorMessage">
                         <div>Invalid credentials. You have to register if you have not.</div>
-                        <Link to="/register"><button>Register</button></Link>
                     </div>
                 )
             }
