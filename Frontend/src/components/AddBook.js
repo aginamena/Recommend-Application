@@ -19,7 +19,7 @@ function AddBook() {
             },
             body: JSON.stringify({ date: dateCreated, title: title, createdBy: creatorEmail, author: author, category: category })
         }
-        const url = "https://cryptic-shore-91810.herokuapp.com/api/api/book"
+        const url = "https://cryptic-shore-91810.herokuapp.com/api/book"
         await fetch(url, options);
         history.push("/profile/" + creatorEmail);
     }
