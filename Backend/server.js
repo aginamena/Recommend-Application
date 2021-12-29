@@ -13,6 +13,17 @@ const path = require("path");
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(cors());
+
+//importing the database function and running it
+require("./config/dbconnect")();
+
+//defining routes
+// register user
+app.use("/", (req, res) => {
+    res.send("it is working");
+})
+app.use("/api/users", usersRoute);
+app.use("/api/book", bookRoute);
 if (process.env.NODE_ENV === 'production') {
     // Serve any static files
     app.use(express.static(path.join(__dirname, 'Frontend/build')));
@@ -21,14 +32,6 @@ if (process.env.NODE_ENV === 'production') {
         res.sendFile(path.join(__dirname, 'Frontend/build', 'index.html'));
     });
 }
-
-//importing the database function and running it
-require("./config/dbconnect")();
-
-//defining routes
-// register user
-app.use("/api/users", usersRoute);
-app.use("/api/book", bookRoute);
 
 
 app.listen(PORT, () => { console.log("Server is running!") })
