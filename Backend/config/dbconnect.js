@@ -6,7 +6,7 @@ const mongoose = require("mongoose");
 // const url = "mongodb+srv://menaagina:BE5ej9mrXWW71PhE@cluster0.ahqbc.mongodb.net/booking-keeping";
 // this is a remote connection with mongo dB atlis and not from our localhost
 // const connectToDB = "mongodb+srv://menaagina:BE5ej9mrXWW71PhE@cluster0.ahqbc.mongodb.net/Recommend-App";
-const url = process.env.MONGODB_URI || "mongodb+srv://menaagina:BE5ej9mrXWW71PhE@cluster0.ahqbc.mongodb.net/Recommend-App";
+const url = "mongodb+srv://menaagina:BE5ej9mrXWW71PhE@cluster0.ahqbc.mongodb.net/Recommend-App";
 const dbConnect = () => {
     mongoose.connect(url, {
         useUnifiedTopology: true,
