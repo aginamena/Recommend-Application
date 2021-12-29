@@ -4,7 +4,7 @@ const cors = require("cors");
 const PORT = process.env.PORT || 9000;
 const usersRoute = require("./routes/usersRoute");
 const bookRoute = require("./routes/bookRoute");
-const path = require("path");
+// const path = require("path");
 // console.log(usersRoute);
 
 //setting up middleware
@@ -19,16 +19,19 @@ require("./config/dbconnect")();
 
 //defining routes
 // register user
+app.get("/", (req, res) => {
+    res.send("hello world");
+})
 app.use("/api/users", usersRoute);
 app.use("/api/book", bookRoute);
-if (process.env.NODE_ENV === 'production') {
-    // Serve any static files
-    app.use(express.static(path.join(__dirname, 'Frontend/build')));
-    // Handle React routing, return all requests to React app
-    app.get('*', function (req, res) {
-        res.sendFile(path.join(__dirname, 'Frontend/build', 'index.html'));
-    });
-}
+// if (process.env.NODE_ENV === 'production') {
+//     // Serve any static files
+//     app.use(express.static(path.join(__dirname, 'Frontend/build')));
+//     // Handle React routing, return all requests to React app
+//     app.get('*', function (req, res) {
+//         res.sendFile(path.join(__dirname, 'Frontend/build', 'index.html'));
+//     });
+// }
 
 
 app.listen(PORT, () => { console.log("Server is running!") })
