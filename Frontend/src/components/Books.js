@@ -6,16 +6,17 @@ import "../styles/Books.css";
 function Books(props) {
     const { shouldSort, sortBy } = props.sortByCategory;
     const [books, setBooks] = useState([]);
+    const url = "https://cryptic-shore-91810.herokuapp.com/"
     useEffect(() => {
         if (shouldSort) {
             //sorting by what the user entered in search box
-            fetch("http://localhost:9000/api/book/searchBy/" + sortBy)
+            fetch(url + "api/book/searchBy/" + sortBy)
                 .then(response => response.json())
                 .then(books => setBooks(books))
                 .catch(error => console.log(error));
 
         } else {
-            fetch("http://localhost:9000/api/book")
+            fetch(url + "api/book")
                 .then(response => response.json())
                 .then(books => setBooks(books))
                 .catch(error => console.log(error));

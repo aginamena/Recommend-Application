@@ -15,7 +15,8 @@ function Register(props) {
             },
             body: JSON.stringify({ email: emailAddress, password: password, name: name })
         }
-        const response = await fetch("http://localhost:9000/api/users/register", options);
+        const url = "https://cryptic-shore-91810.herokuapp.com/"
+        const response = await fetch(url + "api/users/register", options);
         const data = await response.json();
         if (data === "User already exist") {
             setUserExists(true);

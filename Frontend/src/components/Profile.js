@@ -13,7 +13,8 @@ function Profile() {
         var otherUserName = userEmail.substring(0, userEmail.indexOf('@'));
     }
     useEffect(() => {
-        fetch("http://localhost:9000/api/book/" + userEmail)
+        const url = "https://cryptic-shore-91810.herokuapp.com/"
+        fetch(url + "api/book/" + userEmail)
             .then(response => response.json())
             .then(books => setBooks(books))
             .catch(error => console.log(error));

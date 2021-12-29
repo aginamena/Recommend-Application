@@ -11,7 +11,8 @@ function UserProfileBooks(props) {
             },
         }
         // we delete from the backend and filter from the frontend
-        const response = await fetch("http://localhost:9000/api/book/" + props.id, options);
+        const url = "https://cryptic-shore-91810.herokuapp.com/"
+        const response = await fetch(url + "api/book/" + props.id, options);
         props.filter(props.id);
     }
     return (

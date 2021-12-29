@@ -3,8 +3,9 @@ import "../styles/AllUsers.css";
 import { Link } from "react-router-dom"
 function AllUsers() {
     const [allUsers, setAllUsers] = useState([]);
+    const url = "https://cryptic-shore-91810.herokuapp.com/api/users";
     useEffect(() => {
-        fetch("http://localhost:9000/api/users")
+        fetch(url)
             .then(response => response.json())
             .then(books => setAllUsers(books))
     }, [])

@@ -5,7 +5,8 @@ function Home() {
     const [RecommendBookCount, setRecommendBookCount] = useState();
     const userEmail = localStorage.getItem("emailAddress");
     useEffect(() => {
-        fetch("http://localhost:9000/api/book/" + userEmail)
+        const url = "https://cryptic-shore-91810.herokuapp.com/";
+        fetch(url + "api/book/" + userEmail)
             .then(response => response.json())
             .then(books => setRecommendBookCount(books.length))
     }, [])

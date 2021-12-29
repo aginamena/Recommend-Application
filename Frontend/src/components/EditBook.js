@@ -5,10 +5,10 @@ function EditBook() {
     const { bookId } = useParams();
     const history = useHistory();
     const [book, setBook] = useState({});
-
+    const url = "https://cryptic-shore-91810.herokuapp.com/"
     useEffect(() => {
         //fetch book corresponding to the id
-        fetch("http://localhost:9000/api/book/edit/" + bookId)
+        fetch(url + "api/book/edit/" + bookId)
             .then(response => response.json())
             .then(books => setBook(books))
             .catch(error => console.log(error));
@@ -27,7 +27,7 @@ function EditBook() {
             },
             body: JSON.stringify({ date: dateCreated, title: title, createdBy: creatorEmail, author: author, category: category })
         }
-        await fetch("http://localhost:9000/api/book/" + bookId, options);
+        await fetch(url + "api/book/" + bookId, options);
         history.push("/profile/" + creatorEmail);
     }
     return (
